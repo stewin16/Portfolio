@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stewin Navin Mathias - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Indie+Flower&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Indie Flower', cursive;
+            line-height: 1.6;
+            background-color: #f9f7f1;
+            color: #333;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23dddddd' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            min-height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e6e6e6' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H0V0h5z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        
+        /* Glitch effect for the name */
+        .glitch-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .glitch {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            transform: rotate(-2deg);
+            background: linear-gradient(45deg, #FF5370, #FF9A8B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: "STEWIN NAVIN MATHIAS";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #FF5370, #FF9A8B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ffff;
+            animation: glitch-animation-1 2s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: 2px 0 #ff00ff;
+            animation: glitch-animation-2 3s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-animation-1 {
+            0%, 100% { clip-path: inset(50% 0 30% 0); }
+            20% { clip-path: inset(33% 0 33% 0); }
+            40% { clip-path: inset(10% 0 60% 0); }
+            60% { clip-path: inset(62% 0 2% 0); }
+            80% { clip-path: inset(43% 0 27% 0); }
+        }
+        
+        @keyframes glitch-animation-2 {
+            0%, 100% { clip-path: inset(25% 0 58% 0); }
+            20% { clip-path: inset(73% 0 6% 0); }
+            40% { clip-path: inset(54% 0 30% 0); }
+            60% { clip-path: inset(20% 0 45% 0); }
+            80% { clip-path: inset(15% 0 75% 0); }
+        }
+        
+        h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #6A5ACD;
+            transform: rotate(-1deg);
+        }
+        
+        h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: #FF8C42;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #ddd;
+            padding-bottom: 5px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            margin: 0 10px 10px;
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transform: rotate(-1deg);
+            transition: all 0.3s ease;
+            color: #4A90E2; /* New default tab text color */
+        }
+        
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #ddd;
+            transform: scaleX(0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover::after, .tab-btn.active::after {
+            transform: scaleX(1);
+            background: #4A90E2; /* Changed from #FF5370 to blue */
+        }
+        
+        .tab-btn.active {
+            font-weight: bold;
+            color: #4A90E2; /* Changed from #FF5370 to blue */
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .resume-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .resume-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #6A5ACD;
+        }
+        
+        .skill-container {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 1rem;
+            transform: rotate(-1deg);
+            border: 1px dashed #ccc;
+        }
+        
+        .certification {
+            background-color: #f9f5ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            position: relative;
+            border: 1px solid #e0d6f9;
+        }
+        
+        .certification h4 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+        }
+        
+        .contact-form {
+            margin-top: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            font-family: 'Indie Flower', cursive;
+            font-size: 1rem;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .containerr {
+            display: flex;
+        }
+        button {
+            font-family: 'Indie Flower', cursive;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            background-color: #FF8C42;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transform: rotate(-1deg);
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #FF5370;
+            transform: rotate(0deg);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        
+        .social-link {
+            font-size: 1.8rem;
+            color: #6A5ACD;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: #FF5370;
+            transform: scale(1.1);
+        }
+        
+        .profile-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #FF8C42;
+        }
+        
+        .initials {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #6A5ACD;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6A5ACD;
+            transform: rotate(-10deg);
+        }
+        
+        .handwritten-note {
+            transform: rotate(-2deg);
+            color: #6A5ACD;
+            font-size: 1.3rem;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .glitch {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-container">
+                <!-- <img src="/api/placeholder/150/150" alt="Profile" class="profile-img"> -->
+                <div class="initials">SM</div>
+            </div>
+            <div class="glitch-wrapper">
+                <h1 class="glitch">STEWIN NAVIN MATHIAS</h1>
+            </div>
+            <h2>Web Developer & Designer</h2>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="about">About Me</button>
+            <button class="tab-btn" data-tab="resume">Resume</button>
+            <button class="tab-btn" data-tab="certificates">Certifications</button>
+            <button class="tab-btn" data-tab="contact">Contact Me</button>
+        </div>
+        
+        <div id="about" class="tab-content active">
+            <div class="handwritten-note">Hello there! Nice to meet you! ✨</div>
+            
+            <h3>About Me</h3>
+            <p>I'm a passionate web developer and designer with a love for creating beautiful, functional websites. I believe in the power of clean code and intuitive design to solve real-world problems.</p>
+            
+            <p>When I'm not coding, you can find me hiking in the mountains, experimenting with new recipes in the kitchen, or reading a good book with a cup of coffee.</p>
+            
+            <h3>My Skills</h3>
+            <div class="skill-container">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">UI/UX Design</span>
+                <span class="skill">Responsive Design</span>
+                <span class="skill">Git</span>
+            </div>
+        </div>
+        
+        <div id="resume" class="tab-content">
+                      
+            <h3>Education</h3>
+            
+            <div class="resume-item">
+                <h4>SSC - 10TH </h4>
+                <p>Passing Year: 2022</p>
+                <p>Maharashtra State Board of Secondary and Higher Secondary Education</p>
+                <p>Percentage : 93.23 %</p>
+            </div>
+
+            <div class="resume-item">
+                <h4>HSC - 12TH </h4>
+                <p>Passing Year: 2024</p>
+                <p>Maharashtra State Board of Secondary and Higher Secondary Education</p>
+                <p>Percentage : 91.21 %</p>
+            </div>
+
+            <div class="resume-item">
+                <h4>COMPUTER ENGINEERING</h4>
+                <p>Fr. Conceicao Rodrigues College of Engineering, Mumbai</p>
+                <p>2024-2028</p>
+            </div>
+        </div>
+        
+        <div id="certificates" class="tab-content">
+            <h3>Certifications</h3>
+            
+            <div class="certification">
+                <h4>FULL STACK WEB DEVELOPMENT</h4>
+                <p>Issued by: SIMPLILEARN</p>
+                <p>Date: December 2024</p>
+                <p>Comprehensive training in modern web development technologies including React, Node.js, and MongoDB.</p>
+            </div>
+            
+            <div class="certification">
+                <h4>PYTHON PROGRAMMING</h4>
+                <p>Issued by: UDEMY</p>
+                <p>Date: June 2024</p>
+                <p>Basic to Advanced Python programming skills.</p>
+            </div>
+            
+            <div class="certification">
+                <h4>DATA SCIENCE AND ANALYTICS</h4>
+                <p>Issued by: HP LIFE</p>
+                <p>Date: March 2025</p>
+                <p>Use Data Science and Analytics for innovation, decision-making, product development and building stronger customer relationships.</p>
+            </div>
+
+            <div class="certification">
+                <h4>SOCIAL MEDIA MARKETING</h4>
+                <p>Issued by: HP LIFE</p>
+                <p>Date: MARCH 2025</p>
+                <p>Explore and learn how to create a social media advertisement that will reach your target customers using different social media platforms.</p>
+            </div>
+        </div>
+        
+        <div id="contact" class="tab-content">
+            <h3>Get In Touch</h3>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            
+            <div class="social-links">
+                <div class="containerr">
+                    <i class="card">
+                        <a href="www.linkedin.com/in/stewin-mathias-024782324"><img src="linkedin.png" alt="Image 1" class="icon-image"></a>
+                        <h3>Linkedin</h3>
+                    </div>
+            
+                    <div class="card">
+                        <img src="phone.png" alt="Image 2 class="icon-image">
+                        <h3>+91 9226791022</h3>
+                    </div>
+            
+            
+                </div>
+            </div>
+        
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to current button
+                    button.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Form submission (prevent default for demo)
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! In a real portfolio, this would send an email.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Add some handwritten style animations
+            const titles = document.querySelectorAll('h2, h3');
+            titles.forEach(title => {
+                title.addEventListener('mouseenter', () => {
+                    title.style.transform = 'rotate(0deg)';
+                });
+                
+                title.addEventListener('mouseleave', () => {
+                    if (title.tagName === 'H2') {
+                        title.style.transform = 'rotate(-1deg)';
+                    } else {
+                        title.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
